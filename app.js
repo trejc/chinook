@@ -114,6 +114,10 @@ app.get('/artists', function(request, response) {
   response.redirect('/artists/1');
 });
 
+app.get('/', function(request, response) {
+  response.redirect('/artists/1');
+});
+
 /* responds with specified page's artists */
 app.get('/artists/:page', function(request, response) {
   artists(request.params.page, -1, '', function(result) {
@@ -191,4 +195,6 @@ app.get('/pages', function(request, response) {
   });
 });
 
-
+app.listen(process.env.PORT, function() {
+  console.log("Streznik je zagnan!");
+});
